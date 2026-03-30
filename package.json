@@ -1,7 +1,7 @@
 {
   "name": "issue-proxy",
   "scripts": {
-    "dev": "bun run --hot src/index.tsx",
+    "dev": "bun run tailwind:build & bun run --hot src/index.tsx",
     "tailwind:build": "tailwindcss -i src/styles/input.css -o static/style.css --watch",
     "build": "tailwindcss -i src/styles/input.css -o static/style.css"
   },
