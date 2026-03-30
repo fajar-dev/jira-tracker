@@ -3,11 +3,11 @@ import { serveStatic } from 'hono/bun'
 import { RootLayout } from './layouts/RootLayout'
 import issueRouter from './routes/issueRouter'
 
-const app = new Hono<{ Variables: { title?: string } }>().basePath('/jira-tracker')
+const app = new Hono<{ Variables: { title?: string } }>().basePath('/jira-issue')
 
 app.use('/static/*', serveStatic({ 
   root: './',
-  rewriteRequestPath: (path) => path.replace(/^\/jira-tracker/, '')
+  rewriteRequestPath: (path) => path.replace(/^\/jira-issue/, '')
 }))
 app.use('*', async (c, next) => {
   c.setRenderer((content) => {
