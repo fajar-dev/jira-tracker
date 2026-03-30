@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "issue-proxy",
+      "name": "jira-tracker",
       "dependencies": {
         "hono": "^4.12.9",
       },

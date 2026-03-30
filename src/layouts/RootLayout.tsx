@@ -9,7 +9,7 @@ export const RootLayout: FC<{ title?: string; children?: any }> = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{pageTitle}</title>
         <link rel="icon" href="https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon.png" type="image/x-icon" />
-        <link rel="stylesheet" href="/static/style.css" />
+        <link rel="stylesheet" href="/jira-tracker/static/style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
