@@ -3,12 +3,13 @@ import { serveStatic } from 'hono/bun'
 import { RootLayout } from './layouts/RootLayout'
 import issueRouter from './routes/issueRouter'
 
-const app = new Hono()
+const app = new Hono<{ Variables: { title?: string } }>()
 
 app.use('/static/*', serveStatic({ root: './' }))
 app.use('*', async (c, next) => {
   c.setRenderer((content) => {
-    return c.html(<RootLayout>{content}</RootLayout>)
+    const title = c.get('title') as string
+    return c.html(<RootLayout title={title}>{content}</RootLayout>)
   })
   await next()
 })

@@ -434,12 +434,6 @@
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
   }
-  .border-error\/20 {
-    border-color: color-mix(in srgb, #ba1a1a 20%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-error) 20%, transparent);
-    }
-  }
   .border-outline-variant\/20 {
     border-color: color-mix(in srgb, #c3c6d6 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -457,9 +451,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-outline-variant) 50%, transparent);
     }
-  }
-  .bg-error-container {
-    background-color: var(--color-error-container);
   }
   .bg-primary {
     background-color: var(--color-primary);
@@ -637,9 +628,6 @@
   }
   .text-error {
     color: var(--color-error);
-  }
-  .text-on-error-container {
-    color: var(--color-on-error-container);
   }
   .text-on-primary {
     color: var(--color-on-primary);

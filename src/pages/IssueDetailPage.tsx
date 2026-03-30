@@ -7,21 +7,7 @@ import { LinkedIssues } from '../components/issue/LinkedIssues'
 import { CommentSection } from '../components/issue/CommentSection'
 import { SidebarSection } from '../components/issue/SidebarSection'
 
-const IssueDetailPage: FC<{ id: string }> = async ({ id }) => {
-  let fields: any
-  try {
-    const data = await issueService.getIssueById(id)
-    fields = data.fields
-  } catch (error) {
-    return (
-      <div className="p-10 text-center space-y-4">
-        <span className="material-symbols-outlined text-error text-5xl">warning</span>
-        <h2 className="text-xl font-bold">Error loading issue</h2>
-        <p className="text-on-surface-variant">{error instanceof Error ? error.message : 'Unknown error'}</p>
-      </div>
-    )
-  }
-
+const IssueDetailPage: FC<{ id: string, fields: any }> = ({ id, fields }) => {
   const { active: activeSprint, completed: completedSprints } = issueService.getSprintInfo(fields)
   const storyPoints = issueService.getStoryPoints(fields)
   const formatDate = (date: string) => issueService.formatDate(date)

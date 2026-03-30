@@ -1,11 +1,14 @@
 import type { FC } from 'hono/jsx'
 
-export const RootLayout: FC = (props) => {
+export const RootLayout: FC<{ title?: string; children?: any }> = (props) => {
+  const pageTitle = props.title
   return (
     <html lang="en" className="light h-full">
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{pageTitle}</title>
+        <link rel="icon" href="https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon.png" type="image/x-icon" />
         <link rel="stylesheet" href="/static/style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
