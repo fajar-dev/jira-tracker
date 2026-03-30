@@ -3,7 +3,10 @@
   "scripts": {
     "dev": "bun run tailwind:build & bun run --hot src/index.tsx",
     "tailwind:build": "tailwindcss -i src/styles/input.css -o static/style.css --watch",
-    "build": "tailwindcss -i src/styles/input.css -o static/style.css"
+    "build:css": "tailwindcss -i src/styles/input.css -o static/style.css --minify",
+    "build:js": "bun build src/index.tsx --outdir ./dist --target bun --minify",
+    "build": "bun run build:css && bun run build:js",
+    "start": "bun run dist/index.js"
   },
   "dependencies": {
     "hono": "^4.12.9"
