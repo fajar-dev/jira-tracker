@@ -2,6 +2,7 @@ import { Hono } from 'hono'
 import { serveStatic } from 'hono/bun'
 import { RootLayout } from './layouts/RootLayout'
 import issueRouter from './routes/issueRouter'
+import { config } from './config'
 
 const app = new Hono<{ Variables: { title?: string } }>().basePath('/jira-tracker')
 
@@ -27,4 +28,7 @@ app.onError((err, c) => {
   return c.text('An unexpected error occurred', 500)
 })
 
-export default app
+export default {
+  port: config.app.port,
+  fetch: app.fetch,
+}
